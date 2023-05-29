@@ -66,15 +66,17 @@ function App() {
   };
   return (
     <div className="app">
-      <form className="form" onSubmit={handleSumbit}>
-        <input
-          className="input"
-          type="text"
-          id="inputValueCity"
-          placeholder="Search your City"
-        />
-        <button className="button">Search</button>
-      </form>
+      {weather && (
+        <form className="form" onSubmit={handleSumbit}>
+          <input
+            className="input"
+            type="text"
+            id="inputValueCity"
+            placeholder="Search your City"
+          />
+          <button className="button">Search</button>
+        </form>
+      )}
       {weather ? <WheatherCard weather={weather} temp={temp} /> : <Loading />}
     </div>
   );
